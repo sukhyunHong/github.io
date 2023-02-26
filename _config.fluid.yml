@@ -1,0 +1,1093 @@
+#---------------------------
+# Hexo Theme Fluid
+# Author: Fluid-dev
+# Github: https://github.com/fluid-dev/hexo-theme-fluid
+#
+# ÛÕöÇò¦Ñõ: https://hexo.fluid-dev.com/docs/guide/
+# ?Ê¦ì¤?ò¦Ñõñé?ÔğÌÚ??îÜ?Ù¥
+#
+# Guide: https://hexo.fluid-dev.com/docs/en/guide/
+# You can get more detailed help from the guide
+#---------------------------
+
+
+#---------------------------
+# îïÏÑ
+# Global
+#---------------------------
+
+# éÄéÍ??Ğï??îÜ??
+# Icon for browser tab
+favicon: /img/fluid.png
+
+# éÄéÍ?Íı??îÜ??
+# Icon for Apple touch
+apple_touch_icon: /img/fluid.png
+
+# ??Ğï???ñéîÜ??İÂÌ°İ¬£¬üùÍı£º ÙşíñÙ£ - ó×ïÃÙ£
+# Title separator in browser tab, eg: article - site
+tab_title_separator: " - "
+
+# Ë­ğ¤á¶êó?ïÈã®?? HTTPS£¨ÎÁéÄéÍ?ø¸Ôõ?ê¹õó? HTTP ûèìı??£©
+# Force all links to be HTTPS (applicable to HTTP mixed error)
+force_https: false
+
+# ÓÛ??îÜñòË­ÛÕöÇ
+# Enhancements to code blocks
+code:
+  # ãÀÜú???ğ¤ÓÛ?îÜäÎ?
+  # Enable copy code button
+  copy_btn: true
+
+  # ÓÛ??åë
+  # Code language
+  language:
+    enable: true
+    default: "TEXT"
+
+  # ÓÛ?ÍÔÕÕ
+  # Code highlight
+  highlight:
+    enable: true
+
+    # ÓÛ??ãÀÜú?ãÆú¼?
+    # If true, the code block display line numbers
+    line_number: true
+
+    # ??ÍÔÕÕîÜ?£¬??ù»ØüîÜ?öÇ
+    # Highlight library
+    # Options: highlightjs | prismjs
+    lib: "highlightjs"
+
+    highlightjs:
+      # î¤?ïÈñéÓû? style ?ìı
+      # Select a style in the link
+      # See: https://highlightjs.org/static/demo/
+      style: "github gist"
+      style_dark: "dark"
+
+    prismjs:
+      # î¤ù»Û°?ïÈ?ØüéÓ?îÜ?û¡äÎ?Óû? style ?ìı£¬å¥Ê¦ì¤òÁïÈ?ìı css ?ïÈ
+      # Select the style button on the right side of the link page, you can also set the CSS link
+      # See: https://prismjs.com/
+      style: "default"
+      style_dark: "tomorrow night"
+
+      # ?? true ÍÔÕÕ?Üâò¢??ßæà÷£¨Ó£ñşò¨ò¥İ»İÂ prismjs ?Ëì£©£¬?? false ÍÔÕÕ?î¤??Ğï÷×? js ßæà÷
+      # If true, it will be generated locally (but some prismjs plugins are not supported). If false, it will be generated via JS in the browser
+      preprocess: true
+
+# ìéŞÁû¿èÌîÜÍíÒö
+# Some fun features
+fun_features:
+  # ? subtitle ôÕÊ¥öèí®ÏõüùÍı
+  # Typing animation for subtitle
+  typing:
+    enable: true
+
+    # öèìÔáÜÓø£¬?í®êÆÓŞêÆØ·
+    # Typing speed, the larger the number, the slower
+    typeSpeed: 70
+
+    # êı?í®İ¬
+    # Cursor character
+    cursorChar: "_"
+
+    # ãÀÜúâà?÷ëÛ¯üùÍı
+    # If true, loop animation
+    loop: false
+
+    # î¤ò¦ïÒ?Øü??£¬Üô??î¤á¶êó?Øü??
+    # Enable in specified page, all pages by default
+    # Options: home | post | tag | category | about | links | page | 404
+    scope: []
+
+  # ?Ùşíñ?é»ñéîÜ??ôÕÊ¥???
+  # Add an anchor icon to the title on the post page
+  anchorjs:
+    enable: true
+    element: h1,h2,h3,h4,h5,h6
+    # Options: left | right
+    placement: left
+    # Options: hover | always | touch
+    visible: hover
+    # Options: ¡× | # | ?
+    icon: ""
+
+  # Ê¥??Óø?
+  # Progress bar when loading
+  progressbar:
+    enable: true
+    height_px: 3
+    color: "#29d"
+    # See: https://github.com/rstacruz/nprogress
+    options: { showSpinner: false, trickleSpeed: 100 }
+
+# ñ«?äŞßäÙ¼ãÒ£¬??ı¨óø?ñé?õó?ï·?äÎ?£¬éÄ???Ğï?ğí?ï·???£¬?ó¦?ñåâà prefers-color-scheme í»?ï·?
+# Theme dark mode. If enable, a switch button will appear on the menu, each of the visitor's browser will store his switch option
+dark_mode:
+  enable: true
+  # Ùù?îÜ??£¨?éÄ?â¢?ï·?ı¨?Üôî¢äÎğÎÙù?Ù¼ãÒ£©£¬?? `auto` ??à»ñåâà prefers-color-scheme£¬Ğìó­äÎéÄ?Üâò¢?? 18 ïÃÓğó­ìí 6 ïÃñı??ìıäŞßäÙ¼ãÒ
+  # Default option (when the visitor switches manually, the default mode is no longer followed), choosing `auto` will give priority to prefers-color-scheme, and then enter the dark mode from 18:00 to 6:00 in the visitor¡¯s local time
+  # Options: auto | light | dark
+  default: auto
+
+# ñ«??ßäÛÕöÇ£¬ĞìöâÜôßæüùîÜò¢Û°?ŞÅéÄí»ïÒ? css ú°?£¬ÛÕßäÊ¦ì¤î¤ù»Û°?ïÈñé?Ôğ??
+# Theme color, please use custom CSS to solve other colors, color schema can be inspired by the links below
+# See: https://www.webdesignrankings.com/resources/lolcolors/
+color:
+  # body ÛÎÌØßä
+  # Color of body background
+  body_bg_color: "#eee"
+  # äŞßäÙ¼ãÒù»îÜ body ÛÎÌØßä£¬ù»ÔÒ
+  # Color in dark mode, the same below
+  body_bg_color_dark: "#181c27"
+
+  # ?İ»óø?ÛÎÌØßä
+  # Color of navigation bar background
+  navbar_bg_color: "#2f4154"
+  navbar_bg_color_dark: "#1f3144"
+
+  # ?İ»óø?í®?ßä
+  # Color of navigation bar text
+  navbar_text_color: "#fff"
+  navbar_text_color_dark: "#d0d0d0"
+
+  # Üù??í®?ßä
+  # Color of navigation bar text
+  subtitle_color: "#fff"
+  subtitle_color_dark: "#d0d0d0"
+
+  # îïÏÑí®?ßä
+  # Color of global text
+  text_color: "#3c4858"
+  text_color_dark: "#c4c6c9"
+
+  # îïÏÑó­?í®?ßä£¨î×é©¡¢?Ë¿ÔõêÈöÇ£©
+  # Color of global secondary text (excerpt, introduction, etc.)
+  sec_text_color: "#718096"
+  sec_text_color_dark: "#a7a9ad"
+
+  # ñ«Øü÷ùÛÎÌØßä
+  # Color of main board
+  board_color: "#fff"
+  board_color_dark: "#252d38"
+
+  # ÙşíñïáÙşí®?ßä
+  # Color of post text
+  post_text_color: "#2c3e50"
+  post_text_color_dark: "#c4c6c9"
+
+  # ÙşíñïáÙşí®?ßä£¨h1 h2 h3...£©
+  # Color of Article heading (h1 h2 h3...)
+  post_heading_color: "#1a202c"
+  post_heading_color_dark: "#c4c6c9"
+
+  # Ùşíñõ±?ïÈí®?ßä
+  # Color of post link
+  post_link_color: "#0366d6"
+  post_link_color_dark: "#1589e9"
+
+  # õ±?ïÈ?İ©?í®?ßä
+  # Color of link when hovering
+  link_hover_color: "#30a9de"
+  link_hover_color_dark: "#30a9de"
+
+  # õ±?ïÈ?İ©ÛÎÌØßä
+  # Color of link background when hovering
+  link_hover_bg_color: "#f8f9fa"
+  link_hover_bg_color_dark: "#364151"
+
+  # İÂÌ°?ûúøúÌ«??îÜ?ßä
+  # Color of horizontal rule and table border
+  line_color: "#eaecef"
+  line_color_dark: "#435266"
+
+  # ????ßä
+  # Color of scrollbar
+  scrollbar_color: "#c4c6c9"
+  scrollbar_color_dark: "#687582"
+  # ????İ©?ßä
+  # Color of scrollbar when hovering
+  scrollbar_hover_color: "#a6a6a6"
+  scrollbar_hover_color_dark: "#9da8b3"
+
+  # äÎ?ÛÎÌØßä
+  # Color of button
+  button_bg_color: "transparent"
+  button_bg_color_dark: "transparent"
+  # äÎ??İ©ÛÎÌØßä
+  # Color of button when hovering
+  button_hover_bg_color: "#f2f3f5"
+  button_hover_bg_color_dark: "#46647e"
+
+# ñ«?í®?ÛÕöÇ
+# Font
+font:
+  font_size: 16px
+  font_family:
+  letter_spacing: 0.02em
+  code_font_size: 85%
+
+# ò¦ïÒí»ïÒ? .js ÙşËìÖØ?£¬ò¨ò¥Öªøú£»ÖØ?ãÀßÓ? source ÙÍ?£¬åı /js/custom.js ??ğíÛ¯ÙÍ? source/js/custom.js
+# Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
+custom_js:
+
+# ò¦ïÒí»ïÒ? .css ÙşËìÖØ?£¬éÄÛöûú custom_js ßÓÔÒ
+# The usage is the same as custom_js
+custom_css:
+
+# ??????
+# Analysis of website visitors
+web_analytics:  # ??????
+  enable: false
+
+  # ñåâà?ËÔ??Ğï"?Ú¨õÚñ¡"îÜ?öÇ£¬åıÍı???Üô??Ğì??
+  # Follow the "Do Not Track" setting of the visitor's browser
+  # See: https://www.w3.org/TR/tracking-dnt/
+  follow_dnt: true
+
+  # ÛİÓø??îÜ Key£¬?âÍé©?ö¢ù»Û°?ïÈñé `hm.js?` ı¨?îÜí®İ¬Íú
+  # Baidu analytics, get the string behind `hm.js?`
+  # See: https://tongji.baidu.com/sc-web/10000033910/home/site/getjs?siteId=13751376
+  baidu:
+
+  # Google ??îÜ Tracking ID
+  # Google analytics, set Tracking ID
+  # See: https://developers.google.com/analytics/devguides/collection/analyticsjs
+  google:
+
+  # Google gtag.js îÜØÚ??ê¹ ID
+  # Google gtag.js GA_MEASUREMENT_ID
+  # See: https://developers.google.com/analytics/devguides/collection/gtagjs/
+  gtag:
+
+  # ????îÜ H5 App ID£¬??ÍÔ?ÍíÒöî¦êócid
+  # Tencent analytics, set APP ID
+  # See: https://mta.qq.com/h5/manage/ctr_app_manage
+  tencent:
+    sid:
+    cid:
+
+  # 51.la ó×ïÃ?? ID
+  # 51.la analytics
+  # See: https://www.51.la/user/site/index
+  woyaola:  # 51.la ó×ïÃ?? ID£¬??
+
+  # éÒØï/cnzz ó×ïÃ?? web_id
+  # cnzz analytics
+  # See: https://web.umeng.com/main.php?c=site&a=show
+  cnzz:
+
+  # LeanCloud ????£¬Ê¦éÄéÍ PV UV î÷ãÆ£¬åıÍı `web_analytics: enable` ?êó??£¬PV UV î÷ãÆñş???Üô?ñòÊ¥
+  # LeanCloud count statistics, which can be used for PV UV display. If `web_analytics: enable` is false, PV UV display will only query and not increase
+  leancloud:
+    app_id:
+    app_key:
+    # REST API Ü×?Ğïò¢ò££¬??÷úÜô?
+    # Only the Chinese mainland users need to set
+    server_url:
+    # ???Øü??ö¢ÖØ?îÜ?àõ
+    # Get the attribute of the page path during statistics
+    path: window.location.pathname
+    # ??ı¨Üô??Üâò¢ÖØ?( localhost ? 127.0.0.1 )
+    # If true, ignore localhost & 127.0.0.1
+    ignore_local: false
+
+# ??ØüñéîÜ?ø¸ûú???Ëì?ú¼?Ê¥??×â£¬Ê¦?Ûõ?èâîÜêªáÈÜô?ğ«îñÊ¥?
+# Lazy loading of images and comment plugin on the page
+lazyload:
+  enable: true
+
+  # Ê¥??îÜï¿êÈ?ø¸
+  # The placeholder image when loading
+  loading_img: /img/loading.gif
+
+  # ??ı¨?Ê¥??î¤Ùşíñ?ßæüù£¬åıÍıí»ïÒ??ØüâÍé©ŞÅéÄ£¬Ê¦ì¤î¤ Front-matter ×ìò¦ïÒ `lazyload: true`
+  # If true, only enable lazyload on the post page. For custom pages, you can set 'lazyload: true' in front-matter
+  onlypost: false
+
+  # ??Ê¥?îÜø¶ì¹ÛÃ?£¬Ğñ?ãÀ??ÍÔÓø£¬Ê¦ĞÆËßİ»ßş?ÌÑîÜ?Ï´áÜÓø??
+  # The factor of viewport height that triggers loading
+  offset_factor: 2
+
+# ???£¬øĞùßÖõÓŞÕáŞäÎß???£¬ñ«?ëî?îÜÜôøĞùßî¤?£¬ì×ó®Ê¦í»ú¼áóËÇ£¬?? https://hexo.fluid-dev.com/docs/icon/
+# Icon library, which includes many social icons, does not include those theme dependent, so your can modify link by yourself. See: https://hexo.fluid-dev.com/docs/en/icon/
+iconfont: //at.alicdn.com/t/font_1736178_lbnruvf0jn.css
+
+
+#---------------------------
+# ??
+# Header
+#---------------------------
+
+# ?ùş?îÜßÓ?ÛÕöÇ
+# Navigation bar
+navbar:
+  # ?ùş?ñ§?îÜ??£¬?Íö?äÎ hexo config ñé `title` ?ãÆ
+  # The title on the left side of the navigation bar. If empty, it is based on `title` in hexo config
+  blog_title: "Fluid"
+
+  # ?ùş?Ù¾?×ã÷åüù£¬??àõÍíÒö£¬Ê¦Òö?ğãà÷?Øü??Óü?ûú??£¬İ»İÂ??ĞïÜôò¨ò¥?í»?Üôßæüù
+  # Navigation bar frosted glass special animation. It is an experimental feature
+  ground_glass:
+    enable: false
+
+    # Ù¼ûÕßÀáÈ£¬ñşÒö??í®£¬?í®êÆÓŞÙ¼ûÕÓøêÆÍÔ
+    # Number of blurred pixel. the larger the number, the higher the blur
+    px: 3
+
+    # Üô÷âÙ¥Óø£¬?í®êÆÓŞ÷âÙ¥ÓøêÆî¸£¬ñ¼ëò÷âÙ¥?ÓøÊ¦ÒöÊ×Üô?óø?í®?
+    # Ratio of opacity, 1.0 is completely opaque
+    # available: 0 - 1.0
+    alpha: 0.7
+
+  # ?ùş?óø?£¬Ê¦í»ú¼ñò?£¬key éÄ??? languages/*.yml£¬åıÜôğíî¤????ãÆ key ÜâãóîÜ?£»icon ãÀ css class£¬Ê¦ì¤àıÕÔ£»ñòÊ¥ name Ê¦ì¤Ë­ğ¤?ãÆò¦ïÒÙ£?
+  # Navigation bar menu. `key` is used to associate languages/*.yml. If there is no association, the value of `key` itself will be displayed; if `icon` is a css class, it can be omitted; adding `name` can force the display of the specified name
+  menu:
+    - { key: "home", link: "/", icon: "iconfont icon-home-fill" }
+    - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
+    - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
+    - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
+    - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
+    #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
+
+# â¤ßãÍíÒö£¬ĞñéÍ hexo-generator-search ?Ëì£¬å´ì«äÌ?Ğìöââ¤ßã?Ëì???ó®ÍíÒö£¬ì¤ù­Øóßæà÷ÒıåùîÜßãìÚÙşËì
+# Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
+search:
+  enable: true
+
+  # â¤ßãßãìÚÙşËìîÜÖØ?£¬Ê¦ì¤ãÀßÓ?ÖØ?ûäèâó×îÜ??ÖØ?
+  # Path for search index file, it can be a relative path or an absolute path
+  path: /local-search.xml
+
+  # ÙşËìßæà÷î¤Üâò¢îÜêÈöÇ£¬ù±?ãÀßÓ?ÖØ?
+  # The location where the index file is generated locally, it must be a relative location
+  generate_path: /local-search.xml
+
+  # â¤ßãîÜÛõ?
+  # Search field
+  # Options: post | page | all
+  field: post
+
+  # â¤ßããÀÜú?ÙÚïáÙş
+  # If true, search will scan the post content
+  content: true
+
+# âÏ??ø¸îÜßÓ?ÛÕöÇ
+# Config of the big image on the first screen
+banner:
+  # ?ó¬??£¬?ø¸?÷ù???ó·?Ø­???ßæ?ó¬üùÍı
+  # Scrolling parallax
+  parallax: true
+
+  # ?ø¸õÌá³îÜ?ÍÔİï£¬ì¤Øó?ø¸??ù¬?Óøî®îò£¬ÎÁéÄéÍì¹?Ó®???£¬åıâÍ???? 0
+  # Minimum ratio of width to height, applicable to the vertical screen of mobile device, if you need to close it, set it to 0
+  width_height_ratio: 1.0
+
+# ú¾ù»??îÜï©?
+# Scroll down arrow
+scroll_down_arrow:
+  enable: true
+
+  # ??ÍÔÓøÜôá³éÍò¦ïÒİïÖÇ£¬î¦?ãÆï©?
+  # Only the height of the banner image is greater than the ratio, the arrow is displayed
+  # Available: 0 - 100
+  banner_height_limit: 80
+
+  # ??ı¨í»???
+  # Auto scroll after page turning
+  scroll_after_turning_page: true
+
+# ú¾?İ»??îÜï©?
+# Scroll top arrow
+scroll_top_arrow:
+  enable: true
+
+# Open Graph metadata
+# See: https://hexo.io/docs/helpers.html#open-graph
+open_graph:
+  enable: true
+  twitter_card: summary_large_image
+  twitter_id:
+  twitter_site:
+  google_plus:
+  fb_admins:
+  fb_app_id:
+
+
+#---------------------------
+# ?ÊÅ
+# Footer
+#---------------------------
+footer:
+  # ?ÊÅğ¯ìéú¼Ùşí®îÜ HTML£¬Ëï?ÜÁ×º Fluid îÜ?ïÈ£¬éÄéÍú¾ÌÚÒıìÑõÏ?Üâñ«?
+  # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
+  content: '
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
+  '
+
+  # î÷ãÆ?ó×îÜ PV¡¢UV ???
+  # Display website PV and UV statistics
+  statistics:
+    enable: false
+
+    # ???Ëß?ê¹£¬ŞÅéÄ leancloud âÍé©?öÇ `web_analytics: leancloud` ñéîÜ??£»ŞÅéÄ busuanzi ÜôâÍé©?èâ?öÇ£¬Ó£ãÀêó?Üô?ïÒ£¬?èâÜâò¢?ú¼? busuanzi ?ãÆ???Ëß?ÓŞ?éÍïáßÈ?ßÚ£¬İ»ßşı¨?ïáßÈ
+    # Data source. If use leancloud, you need to set the parameter in `web_analytics: leancloud`
+    # Options: busuanzi | leancloud
+    source: "busuanzi"
+
+  # ??ÓŞ?Ü×?ĞïîÜ?äĞãáãÓ
+  # For Chinese mainland website policy, other areas keep disable
+  beian:
+    enable: false
+    # ICP??
+    icp_text: ÌÈICP?123456?
+    # ÍëäÌ?äĞ?£¬Üô??ñş?ãÆICP
+    police_text: ÌÈÍë?äÌ?12345678?
+    # ÍëäÌ?äĞîÜ??£¬éÄéÍURLÔ¯???
+    police_code: 12345678
+    # ÍëäÌ?äĞîÜ?ø¸. ?Íö?Üô?ãÆ?äĞ?ø¸
+    police_icon: /img/police_beian.png
+
+
+#---------------------------
+# âÏ?
+# Home Page
+#---------------------------
+index:
+  # âÏ? Banner ??£¬Ê¦ì¤ãÀßÓ?ÖØ?ûä??ÖØ?£¬ì¤ù»ßÓÔÒ
+  # Path of Banner image, can be a relative path or an absolute path, the same on other pages
+  banner_img: /img/default.png
+
+  # ??ÍÔÓø£¬?Ø­ÛİİÂİï
+  # Height ratio of banner image
+  # Available: 0 - 100
+  banner_img_height: 100
+
+  # ??ıÙßäÙÕ÷úîÜÜô÷âÙ¥Óø£¬available: 0 - 1.0£¬ 1 ãÀèÇîïÜô÷âÙ¥
+  # Opacity of the banner mask, 1.0 is completely opaque
+  # Available: 0 - 1.0
+  banner_mask_alpha: 0.3
+
+  # âÏ?Üù??îÜ?Ø¡?öÇ
+  # Independent config of home page subtitle
+  slogan:
+    enable: true
+
+    # ?Íö?äÎ hexo config.subtitle ?ãÆ
+    # If empty, text based on `subtitle` in hexo config
+    text: "An elegant Material-Design theme for Hexo"
+
+    # ÷×? API ïÈÏ¢íÂ?âÏ?Üù??îÜ?é»£¬ù±?Ú÷üŞîÜãÀ JSON Ì«ãÒ£¬åıÍı?Ï´ã÷??äÎ text í®Ó«?ãÆ£¬?ÍíÒöù±?à»?? typing öèí®ÏõÍíÒö
+    # Subtitle of the homepage through the API, must be returned a JSON. If the request fails, it will be displayed in `text` value. This feature must first enable the typing animation
+    api:
+      enable: false
+
+      # ?Ï´ò¢ò£
+      # Request url
+      url: ""
+
+      # ?Ï´Û°Ûö
+      # Request method
+      # Available: GET | POST | PUT
+      method: "GET"
+
+      # ?Ï´?
+      # Request headers
+      headers: {}
+
+      # ??Ï´?Íı?ö¢í®İ¬ÍúîÜö¢?í®Ó«£¬õÌ?ù±?ãÀìé?í®İ¬Íú£¬ÖÇåıÚ÷üŞ?Íı? {"data": {"author": "fluid", "content": "An elegant theme"}}, ?ö¢?í®Ó«? ['data', 'content']£»åıÍıÚ÷üŞãÀÖªøú?í»???ğ¯ìé?
+      # The value field of the string obtained from the response. For example, the response content is {"data": {"author": "fluid", "content": "An elegant theme"}}, the expected `keys: ['data','content']`; if the return is a list, the first item is automatically selected
+      keys: []
+
+  # í»?ï¸ö¢Ùşíñî×é©
+  # Auto extract post
+  auto_excerpt:
+    enable: true
+
+  # öè?ÙşíñîÜ??Û°ãÒ
+  # The browser tag to open the post
+  # Available: _blank | _self
+  post_url_target: _self
+
+  # ãÀÜú?ãÆÙşíñãáãÓ£¨??¡¢İÂ?¡¢??£©
+  # Meta information of post
+  post_meta:
+    date: true
+    category: true
+    tag: true
+
+  # Ùşíñ÷×? sticky ÛÉßíı¨£¬î¤âÏ?Ùşíñ??îñ?ãÆ??
+  # If the posts are sorted by `sticky`, an icon is displayed in front of the post title
+  post_sticky:
+    enable: true
+    icon: "iconfont icon-top"
+
+
+#---------------------------
+# Ùşíñ?
+# Post Page
+#---------------------------
+post:
+  banner_img: /img/default.png
+  banner_img_height: 70
+  banner_mask_alpha: 0.3
+
+  # Ùşíñî¤âÏ?îÜÙù?ÜæØü?£¬??êóò¦ïÒ index_img ??ŞÅéÄ??ø¸£¬å´?íºÔ´?Íö?Üô?ãÆìòù¼?ø¸
+  # Path of the default post cover when `index_img` is not set. If both are empty, no image will be displayed
+  default_index_img:
+
+  # Ùşíñ??ù»Û°îÜêªãáãÓ
+  # Meta information below title
+  meta:
+    # íÂíº£¬?à»ĞÆËß front-matter ×ì author í®Ó«£¬Ğìó­ãÀ hexo ÛÕöÇñé author ?
+    # Author, based on `author` field in front-matter, if not set, based on `author` value in hexo config
+    author:
+      enable: false
+
+    # ÙşíñìíÑ¢£¬?à»ĞÆËß front-matter ×ì date í®Ó«£¬Ğìó­ãÀ md ÙşËììíÑ¢
+    # Post date, based on `date` field in front-matter, if not set, based on create date of .md file
+    date:
+      enable: true
+      # Ì«ãÒ?ğÎ ISO-8601 ìíÑ¢Ì«ãÒûù
+      # ISO-8601 date format
+      # See: http://momentjs.cn/docs/#/parsing/string-format/
+      format: "LL a"
+
+    # í®???
+    # Word count
+    wordcount:
+      enable: true
+
+    # ????îïÙşâÍé©îÜ??
+    # Estimated reading time
+    min2read:
+      enable: true
+      # Øß?í®?îÜ?Óø£¬Ëï?£ºñéÙş?2£¬çÈÙş?5£¬ñéçÈûèùêÊ¦í»ú¼??
+      # Average word length (chars count in word), ZH ? 2, EN ? 5
+      awl: 2
+      # ØßİÂ???í®?£¬åıÍıÓŞİ»İÂãÀĞü?ÙşíñÊ¦ÎÁÓø?î¸
+      # Words per minute
+      wpm: 60
+
+    # ??Õá??
+    # Number of visits
+    views:
+      enable: false
+      # ???Ëß?ê¹
+      # Data Source
+      # Options: busuanzi | leancloud
+      source: "busuanzi"
+
+  # î¤Ùşíñ???ãÆÙşíñÌÚãæ??£¬???Ùù?ãÀ md ÙşËìÌÚãæ??£¬Ê¦÷×? front-matter ñé `updated` â¢?ò¦ïÒ£¨ûú date ìé?Ì«ãÒ£©
+  # Update date is displayed at the beginning of the post. The default date is the update date of the md file, which can be manually specified by `updated` in front-matter (same format as date)
+  updated:
+    enable: false
+
+    # Ì«ãÒ?ğÎ ISO-8601 ìíÑ¢Ì«ãÒûù
+    # ISO-8601 date format
+    # See: http://momentjs.cn/docs/#/parsing/string-format/
+    date_format: "LL a"
+
+    # ãÀÜúŞÅéÄßÓ???øúãÆ£¬İïåı£º"3 ô¸îñ"
+    # If true, it will be a relative time, such as: "3 days ago"
+    relative: false
+
+    # ğ«ãÆ???úş
+    # Note class
+    # Options: default | primary | info | success | warning | danger | light
+    note_class: info
+
+  # ???î÷ãÆ?îñİÂ?ù»îÜÙşíñ
+  # Sidebar of category
+  category_bar:
+    enable: true
+
+    # ??ı¨£¬ñşêóî¤Ùşíñ Front-matter ×ìò¦ïÒ `category_bar: true` î¦?î÷ãÆİÂ?£¬å¥Ê¦ì¤÷×? `category_bar: ["İÂ?A"]` ?ò¦ïÒİÂ?
+    # If true, only set `category_bar: true` in Front-matter will enable sidebar of category, also set `category_bar: ["CategoryA"]` to specify categories
+    specific: true
+
+    # öÇéÍ÷ù?îÜñ§?ûäéÓ?
+    # place in the board
+    # Options: left | right
+    placement: left
+
+    # ÙşíñîÜÛÉßíí®Ó«£¬îñØü???ãÀÓîßí£¬Üô???ãÀïáßí
+    # Sort field for posts, with a minus sign is reverse order
+    # Options: date | title | or other field of front-matter
+    post_order_by: "title"
+
+    # ??İÂ?ñéï¹?î÷ãÆÙşíñ?îÜõÌÓŞ?£¬õ±?ùÚğ¤??ãÆ More£¬0 ?ÜôùÚğ¤
+    # The maximum number of posts in a single category. If the limit is exceeded, it will be displayed More. If 0 no limit
+    post_limit: 0
+
+  # ???î÷ãÆÙşíñÙÍ?
+  # Table of contents (TOC) in the sidebar
+  toc:
+    enable: true
+
+    # öÇéÍ÷ù?îÜñ§?ûäéÓ?
+    # place in the board
+    # Options: left | right
+    placement: right
+
+    # ÙÍ?????ŞÁ?ïÃíÂ???
+    # TOC will select these nodes as headings
+    headingSelector: "h1,h2,h3,h4,h5,h6"
+
+    # ??îÜï¹?ä¢Óø£¬0 ãÀîïİ»ï¹?£¬ÓŞéÍ 0 ı¨åıÍığíî¤ù»????Ùù?î÷?
+    # Collapse depth. If 0, all headings collapsed. If greater than 0, it will be expanded by default if there are sub headings
+    collapseDepth: 0
+
+  # ÷ú??Ù¥£¬??ãÆî¤Øßø¹ÙşíñîÜ?Ú­
+  # Copyright, will be displayed at the end of each post
+  copyright:
+    enable: true
+
+    # CreativeCommons license
+    # Options: BY | BY-SA | BY-ND | BY-NC | BY-NC-SA | BY-NC-ND
+    license: 'BY'
+
+    # ?ãÆíÂíº
+    author:
+      enable: true
+
+    # ?ãÆ?øÖìíÑ¢
+    # Show post date
+    post_date:
+      enable: true
+      format: "LL"
+
+    # ?ãÆÌÚãæìíÑ¢
+    # Show update date
+    update_date:
+      enable: false
+      format: "LL"
+
+  # Ùşíñî¼İ»ß¾ìéø¹ù»ìéø¹ÍíÒö
+  # Link to previous/next post
+  prev_next:
+    enable: true
+
+  # Ùşíñ?ø¸??
+  # Image caption
+  image_caption:
+    enable: true
+
+  # Ùşíñ?ø¸Ê¦ïÃ?Û¯ÓŞ
+  # Zoom feature of images
+  image_zoom:
+    enable: true
+    # Û¯ÓŞı¨?ø¸?ïÈôğ???£¬Ê¦éÄéÍ????ø¸?ïÈôğ??ê«?ø¸?ïÈ£¬åı ['-slim', ''] ãÀ??ïÈñé `-slim` ì¹ğ¶£»åıÍıßÌŞÅéÄïá??ŞÅéÄ `re:` îñ?£¬åı ['re:\\d{3,4}\\/\\d{3,4}\\/', '']
+    # The image url replacement when zooming, the feature can be used to replace the compressed image to the original image, eg: ['-slim', ''] removes `-slim` from the image url when zooming; if you want to use regular, use prefix `re:`, eg: ['re:\\d{3,4}\\/\\d{3,4}\\/','']
+    img_url_replace: ['', '']
+
+  # ÊÅñ¼?Ûö£¬?î¤Ùşíñî¼İ»ßæà÷ÊÅñ¼£¬åıÍı Markdown àÂæøĞïÜâãóò¨ò¥£¬?Ëï???£¬Üú?Ê¦Òö??ÔÍ
+  # Support footnote syntax, footnotes will be generated at the bottom of the post page. If the Markdown renderer itself supports it, please disable it, otherwise it may conflict
+  footnote:
+    enable: true
+    # ÊÅñ¼îÜ???£¬å¥Ê¦ì¤î¤ front-matter ñé÷×? `footnote: <h2>Reference</h2>` ??û¡ãÒáóËÇ???ØüîÜ header
+    # The section title of the footnote, you can also modify the header of a single page in the form of `footnote: <h2>Reference</h2>` in front-matter
+    header: ''
+
+  # ??ÍëãÒ£¬??ñıîñâÍé©ÌÚ? Markdown àÂæøĞï£¬Üú???ÍëãÒ?êóÌÂé»??£¬Îı???£ºhttps://hexo.fluid-dev.com/docs/guide/##latex-??ÍëãÒ
+  # Mathematical formula. If enable, you need to change the Markdown renderer, see: https://hexo.fluid-dev.com/docs/en/guide/#math
+  math:
+    # ??ı¨ÙşíñÙù?Ê¦éÄ£¬í»ïÒ??ØüåıâÍŞÅéÄ£¬âÍî¤ Front-matter ñéò¦ïÒ `math: true`
+    # If you want to use math on the custom page, you need to set `math: true` in Front-matter
+    enable: false
+
+    # ??ı¨£¬ñşêóî¤Ùşíñ Front-matter ×ìò¦ïÒ `math: true` î¦?î¤Ùşíñ???ÍëãÒ??£¬ì¤øµî¤?ØüÜôøĞùßÍëãÒ?ğ«ÍÔÊ¥?áÜÓø
+    # If true, only set `math: true` in Front-matter will enable math, to load faster when the page does not contain math
+    specific: false
+
+    # Options: mathjax | katex
+    engine: mathjax
+
+  # ×µïï?£¬ĞñéÍ mermaid-js£¬Îı???£ºhttps://hexo.fluid-dev.com/docs/guide/#mermaid-×µïï?
+  # Flow chart, based on mermaid-js, see: https://hexo.fluid-dev.com/docs/en/guide/#mermaid
+  mermaid:
+    # ??ı¨ÙşíñÙù?Ê¦éÄ£¬í»ïÒ??ØüåıâÍŞÅéÄ£¬âÍî¤ Front-matter ñéò¦ïÒ `mermaid: true`
+    # If you want to use mermaid on the custom page, you need to set `mermaid: true` in Front-matter
+    enable: false
+
+    # ??ı¨£¬ñşêóî¤Ùşíñ Front-matter ×ìò¦ïÒ `mermaid: true` î¦?î¤Ùşíñ???ÍëãÒ??£¬ì¤øµî¤?ØüÜôøĞùßÍëãÒ?ğ«ÍÔÊ¥?áÜÓø
+    # If true, only set `mermaid: true` in Front-matter will enable mermaid, to load faster when the page does not contain mermaid
+    specific: false
+
+    # See: http://mermaid-js.github.io/mermaid/
+    options: { theme: 'default' }
+
+  # ???Ëì
+  # Comment plugin
+  comments:
+    enable: false
+    # ò¦ïÒîÜ?Ëì£¬âÍé©ÔÒ??öÇ???ËìîÜù±é©??
+    # The specified plugin needs to set the necessary parameters at the same time
+    # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus
+    type: disqus
+
+
+#---------------------------
+# ???Ëì
+# Comment plugins
+#
+# ????âÍé©à»?öÇß¾Û° `post: comments: enable: true`£¬æÔı¨ĞÆËß `type` ?öÇù»Û°??îÜ???Ëì??
+# Enable comments need to be set `post: comments: enable: true`, then set the corresponding comment plugin parameters below according to `type`
+#---------------------------
+
+# Utterances
+# ĞñéÍ GitHub Issues
+# Based on GitHub Issues
+# See: https://utteranc.es
+utterances:
+  repo:
+  issue_term: pathname
+  label: utterances
+  theme: github-light
+  theme_dark: github-dark
+
+# Disqus
+# ĞñéÍğ¯ß²Û°îÜÜ×?£¬??éÄ?òÁïÈŞÅéÄé»æ¶ù¬?£¬Ëï?ÛÕùê Disqusjs
+# Based on third-party service
+# See: https://disqus.com
+disqus:
+  shortname:
+  # ì¤ù»? Disqusjs ò¨ò¥, ??éÄ?åıÍıßÌŞÅéÄ Disqus Ëï?ÛÕùêŞÅéÄ
+  # The following are Disqusjs configurations, please ignore if DisqusJS is not required
+  # See: https://github.com/SukkaW/DisqusJS
+  disqusjs: false
+  apikey:
+
+# Gitalk
+# ĞñéÍ GitHub Issues
+# Based on GitHub Issues
+# See: https://github.com/gitalk/gitalk#options
+gitalk:
+  clientID:
+  clientSecret:
+  repo:
+  owner:
+  admin: ['name']
+  language: zh-CN
+  labels: ['Gitalk']
+  perPage: 10
+  pagerDirection: last
+  distractionFreeMode: false
+  createIssueManually: true
+  # Ùù? proxy Ê¦Òö?ã÷üù£¬ú°?Û°Ûö??ù»Û°?ïÈ
+  # The default proxy may be invalid, refer to the links for solutions
+  # https://github.com/gitalk/gitalk/issues/429
+  # https://github.com/Zibri/cloudflare-cors-anywhere
+  proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token
+
+# Valine
+# ĞñéÍ LeanCloud
+# Based on LeanCloud
+# See: https://valine.js.org/
+valine:
+  appId:
+  appKey:
+  path: window.location.pathname
+  placeholder:
+  avatar: 'retro'
+  meta: ['nick', 'mail', 'link']
+  requiredFields: []
+  pageSize: 10
+  lang: 'zh-CN'
+  highlight: false
+  recordIP: false
+  serverURLs: ''
+  emojiCDN:
+  emojiMaps:
+  enableQQ: false
+
+# Waline
+# ? Valine æâßæì»?£¬?èâñòÊ¥ÖõÜ×?Ó®ûúÒı?ÍíÒö
+# Derived from Valine, with self-hosted service and new features
+# See: https://waline.js.org/
+waline:
+  serverURL: ''
+  path: window.location.pathname
+  meta: ['nick', 'mail', 'link']
+  requiredMeta: ['nick']
+  lang: 'zh-CN'
+  emoji: ['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']
+  dark: 'html[data-user-color-scheme="dark"]'
+  wordLimit: 0
+  pageSize: 10
+
+# ?åë Changyan
+# ĞñéÍğ¯ß²Û°îÜÜ×?
+# Based on third-party service, insufficient support for regions outside China
+# http://changyan.kuaizhan.com
+changyan:
+  appid: ''
+  appkey: ''
+
+# ?ù±Õô Livere
+# ĞñéÍğ¯ß²Û°îÜÜ×?
+# Based on third-party service
+# See: https://www.livere.com
+livere:
+  uid: ''
+
+# Remark42
+# âÍé©í»öõÎ·Ü×?Ó®
+# Based on self-hosted service
+# See: https://remark42.com
+remark42:
+  host:
+  site_id:
+  max_shown_comments: 10
+  locale: zh
+  components: ['embed']
+
+# Twikoo
+# ĞñéÍ??éö??
+# Based on Tencent CloudBase
+# See: https://twikoo.js.org
+twikoo:
+  envId:
+  region: ap-shanghai
+  path: window.location.pathname
+
+# Cusdis
+# ĞñéÍğ¯ß²Û°Ü×?ûäí»öõÎ·Ü×?
+# Based on third-party or self-hosted service
+# See https://cusdis.com
+cusdis:
+  host:
+  app_id:
+  lang: zh-cn
+
+# Giscus
+# ĞñéÍ GitHub Discussions£¬?ŞÄéÍ Utterances
+# Based on GitHub Discussions, similar to Utterances
+# See: https://giscus.app/
+giscus:
+  repo:
+  repo-id:
+  category:
+  category-id:
+  theme-light: light
+  theme-dark: dark
+  mapping: pathname
+  reactions-enabled: 1
+  emit-metadata: 0
+  input-position: top
+  lang: zh-CN
+
+#---------------------------
+# ???
+# Archive Page
+#---------------------------
+archive:
+  banner_img: /img/default.png
+  banner_img_height: 60
+  banner_mask_alpha: 0.3
+
+
+#---------------------------
+# İÂ??
+# Category Page
+#---------------------------
+category:
+  enable: true
+  banner_img: /img/default.png
+  banner_img_height: 60
+  banner_mask_alpha: 0.3
+
+  # İÂ?îÜÛÉßíí®Ó«£¬îñØü???ãÀÓîßí£¬Üô???ãÀïáßí
+  # Sort field for categories, with a minus sign is reverse order
+  # Options: length | name
+  order_by: "-length"
+
+  # ??îÜï¹?ä¢Óø£¬0 ãÀîïİ»ï¹?£¬ÓŞéÍ 0 ı¨åıÍığíî¤í­İÂ??Ùù?î÷?
+  # Collapse depth. If 0, all posts collapsed. If greater than 0, it will be expanded by default if there are subcategories
+  collapse_depth: 0
+
+  # ÙşíñîÜÛÉßíí®Ó«£¬îñØü???ãÀÓîßí£¬Üô???ãÀïáßí
+  # Sort field for posts, with a minus sign is reverse order
+  # Options: date | title | or other field of front-matter
+  post_order_by: "-date"
+
+  # ??İÂ?ñéï¹?î÷ãÆÙşíñ?îÜõÌÓŞ?£¬õ±?ùÚğ¤??ãÆ More£¬0 ?ÜôùÚğ¤
+  # The maximum number of posts in a single category. If the limit is exceeded, it will be displayed More. If 0 no limit
+  post_limit: 10
+
+
+#---------------------------
+# ???
+# Tag Page
+#---------------------------
+tag:
+  enable: true
+  banner_img: /img/default.png
+  banner_img_height: 80
+  banner_mask_alpha: 0.3
+  tagcloud:
+    min_font: 15
+    max_font: 30
+    unit: px
+    start_color: "#BBBBEE"
+    end_color: "#337ab7"
+
+
+#---------------------------
+# ?éÍ?
+# About Page
+#---------------------------
+about:
+  enable: true
+  banner_img: /img/default.png
+  banner_img_height: 60
+  banner_mask_alpha: 0.3
+  avatar: /img/avatar.png
+  name: "Fluid"
+  intro: "An elegant theme for Hexo"
+  # ÌÚÒı??Ê¦? https://hexo.fluid-dev.com/docs/icon/ ??£¬`class` ÓÛøú??îÜ css class£¬ôÕÊ¥ `qrcode` ı¨£¬??Üôî¢ãÀ?ïÈì»ãÀ?İ©ì£??
+  # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
+  icons:
+    - { class: "iconfont icon-github-fill", link: "https://github.com", tip: "GitHub" }
+    - { class: "iconfont icon-douban-fill", link: "https://douban.com", tip: "Ôç÷û" }
+    - { class: "iconfont icon-wechat-fill", qrcode: "/img/favicon.png" }
+
+
+#---------------------------
+# í»ïÒ??
+# Custom Page
+#
+# ÷×? hexo new page Ù¤Öµ?ËïîÜ?Øü
+# Custom Page through `hexo new page`
+#---------------------------
+page:
+  banner_img: /img/default.png
+  banner_img_height: 60
+  banner_mask_alpha: 0.3
+
+
+#---------------------------
+# 404?
+# 404 Page
+#---------------------------
+page404:
+  enable: true
+  banner_img: /img/default.png
+  banner_img_height: 85
+  banner_mask_alpha: 0.3
+  # ñìïÒú¾ÓğâÏ?îÜæÅ?(ûÆõ©)
+  # Delay in redirecting to home page (milliseconds)
+  redirect_delay: 5000
+
+
+#---------------------------
+# éÒ??
+# Links Page
+#---------------------------
+links:
+  enable: true
+  banner_img: /img/default.png
+  banner_img_height: 60
+  banner_mask_alpha: 0.3
+  # éÒ?îÜà÷??
+  # Member item of page
+  items:
+    - {
+      title: "Fluid Blog",
+      intro: "ñ«?ÚÏËÔ",
+      link: "https://hexo.fluid-dev.com/",
+      avatar: "/img/favicon.png"
+    }
+    - {
+      title: "Fluid Docs",
+      intro: "ñ«?ŞÅéÄò¦Ñõ",
+      link: "https://hexo.fluid-dev.com/docs/",
+      avatar: "/img/favicon.png"
+    }
+    - {
+      title: "Fluid Repo",
+      intro: "ñ«? GitHub ??",
+      link: "https://github.com/fluid-dev/hexo-theme-fluid",
+      avatar: "/img/favicon.png"
+    }
+
+  # ?à÷??ßÀÊ¥?ã÷??£¬ôğ??ò¦ïÒ?ø¸
+  # When the member avatar fails to load, replace the specified image
+  onerror_avatar: /img/avatar.png
+
+  # éÒ?ù»Û°í»ïÒ??æ´£¬ò¨ò¥ HTML£¬Ê¦?ìıÖÇåıãé?éÒ?îÜÙşí®
+  # Custom content at the bottom of the links
+  custom:
+    enable: false
+    content: '<hr><p>î¤ù»Û°×ºåëãé?Ê¥ìıä²îÜéÒ?£¬äÎåıù»Ì«ãÒğ«ÍêãáãÓ£º</p><ul><li>ÚÏËÔÙ££ºFluid</li><li>?Ë¿£ºFluid ñ«?Î¯Û°ÚÏËÔ</li><li>?ïÈ£ºhttps://hexo.fluid-dev.com</li><li>?ø¸£ºhttps://hexo.fluid-dev.com/img/favicon.png</li></ul>'
+
+  # ???Ëì
+  # Comment plugin
+  comments:
+    enable: false
+    # ò¦ïÒîÜ?Ëì£¬âÍé©ÔÒ??öÇ???ËìîÜù±é©??
+    # The specified plugin needs to set the necessary parameters at the same time
+    # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis | giscus
+    type: disqus
+
+
+#---------------------------
+# ì¤ù»ãÀÛÕöÇ JS CSS Ôõ???ê¹îÜ URL îñ?£¬Ê¦ì¤í»ïÒ?à÷ CDN ò¢ò££¬
+# åıÍıâÍé©áóËÇ£¬õÌû¿ŞÅéÄ?Ùù?ÛÕöÇßÓÔÒîÜ÷úÜâ£¬ì¤ù­Øó?î¤îÜ??£¬
+# ** åıÍı?Üôò±Ô³åıù¼?öÇ£¬?Üôé©ñ®ìòù¼ËÇ? **
+#
+# Here is the url prefix to configure the static assets. Set CDN addresses you want to customize.
+# Be aware that you would better use the same version as default ones to avoid potential problems.
+# DO NOT EDIT THE FOLLOWING SETTINGS UNLESS YOU KNOW WHAT YOU ARE DOING
+#---------------------------
+
+static_prefix:
+  # ?İ»??
+  # Internal static
+  internal_js: /js
+  internal_css: /css
+  internal_img: /img
+
+  anchor: https://lib.baomitu.com/anchor-js/4.3.1/
+
+  github_markdown: https://lib.baomitu.com/github-markdown-css/4.0.0/
+
+  jquery: https://lib.baomitu.com/jquery/3.6.0/
+
+  bootstrap: https://lib.baomitu.com/twitter-bootstrap/4.6.1/
+
+  prismjs: https://lib.baomitu.com/prism/1.29.0/
+
+  tocbot: https://lib.baomitu.com/tocbot/4.18.2/
+
+  typed: https://lib.baomitu.com/typed.js/2.0.12/
+
+  fancybox: https://lib.baomitu.com/fancybox/3.5.7/
+
+  nprogress: https://lib.baomitu.com/nprogress/0.2.0/
+
+  mathjax: https://lib.baomitu.com/mathjax/3.2.2/
+
+  katex: https://lib.baomitu.com/KaTeX/0.16.2/
+
+  busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
+
+  clipboard: https://lib.baomitu.com/clipboard.js/2.0.11/
+
+  mermaid: https://lib.baomitu.com/mermaid/8.14.0/
+
+  valine: https://lib.baomitu.com/valine/1.5.1/
+
+  waline: https://lib.baomitu.com/waline/2.14.1/
+
+  gitalk: https://lib.baomitu.com/gitalk/1.8.0/
+
+  disqusjs: https://lib.baomitu.com/disqusjs/1.3.0/
+
+  twikoo: https://lib.baomitu.com/twikoo/1.6.8/
+
+  hint: https://lib.baomitu.com/hint.css/2.7.0/
